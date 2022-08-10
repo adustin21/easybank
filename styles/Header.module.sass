@@ -1,0 +1,79 @@
+@use '_mixins' as m
+@use '_colors' as c
+.header
+	@include m.fxJA(space-between, center)
+	@include m.wrapper(1.22em)
+	background-color: c.$white
+	width: 100%
+	box-sizing: border-box
+	position: relative
+	z-index: 100
+	.header__logo
+		@include m.wh(139px, 20px)
+		background-image: url("/images/logo.svg")
+		background-size: cover
+	.header__menu
+		@include m.wh(100%, 100vh)
+		display: block
+		background: linear-gradient(c.$darkBlue, transparent)
+		position: absolute
+		left: 0
+		top: 100%
+		padding: 1.33em
+		box-sizing: border-box
+	.header__list
+		display: grid
+		justify-items: center
+		background: c.$white
+		border-radius: 4px
+		padding: 0.45em 0
+	.header__list-item
+		padding: 0.67em 0
+	.header__hamburger-button
+		@include m.wh(24px , 19px)
+		background-image: url("/images/icon-close.svg")
+		background-position: center
+		background-repeat: no-repeat
+
+	.invite-button
+		display: none
+	@media screen and ( min-width:  756px)
+		@include m.wrapper(1em)
+		.header__hamburger-button
+			display: none
+		.header__menu
+			@include m.wh(min-content, min-content)
+			padding: 0
+			display: block
+			position: relative
+			background: inherit
+		.header__list
+			display: flex
+			border-radius: 0
+			background: inherit
+		.header__list-item
+			padding-left: 2.2em
+			font-size: 14px
+			line-height: 16px
+			position: relative
+			box-sizing: border-box
+			&:hover
+				color: black
+				&::before
+					@include m.wh(calc(100% - 2em), 4px)
+					display: block
+					content: ""
+					background: c.$limeGreen
+					position: absolute
+					bottom: -1.9em
+		.invite-button
+			display: block
+
+.header_close
+	.header__menu
+		display: none
+	.header__hamburger-button
+		background-image: url("/images/icon-hamburger.svg")
+	@media screen and ( min-width:  756px)
+		.header__menu
+			display: block

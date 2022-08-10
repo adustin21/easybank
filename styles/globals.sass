@@ -1,0 +1,77 @@
+@use '_colors' as c
+
+html, body
+	margin: 0
+	padding: 0
+	font-family: 'Public Sans', sans-serif
+	font-style: normal
+	font-weight: 400
+	font-size: 18px
+	line-height: 28px
+	letter-spacing: -0.28px
+	color: c.$grayishBlue
+	background-color: c.$veryLightGray
+	@media screen and ( max-width: 755px)
+		font-size: 15px
+		line-height: 25px
+		letter-spacing: -0.23px
+body
+
+	overflow-x: hidden
+	// min-height: 100vh
+	height: max-content
+h1, h2, h3, h4
+	color: c.$darkBlue
+	font-weight: 300
+	font-style: normal
+h1
+	font-size: 56px
+	line-height: 64px
+	letter-spacing: -1px
+	@media screen and ( max-width: 755px)
+		font-size: 40px
+		line-height: 47px
+		letter-spacing: -0.71px
+
+h2
+	font-size: 40px
+	line-height: 64px
+	letter-spacing: -0.71px
+	@media screen and ( max-width: 755px)
+		font-size: 32px
+		line-height: 37.6px
+		letter-spacing: -0.57px
+h3
+	font-size: 24px
+	line-height: 28px
+	letter-spacing: -0.42px
+	@media screen and ( max-width: 755px)
+		font-size: 20px
+		line-height: 28px
+		letter-spacing: -0.35px
+h4
+	font-size: 16px
+	line-height: 20px
+	letter-spacing: -0.28px
+	@media screen and ( max-width: 755px)
+		font-size: 16px
+		line-height: 20px
+a
+	color: inherit
+	text-decoration: none
+ul, li
+	margin: 0
+	padding: 0
+li
+	list-style: none
+button
+	outline: none
+	border: none
+	background-color: transparent
+button, a
+	&:focus-visible
+		outline: solid 2px c.$darkBlue
+.body_use-mouse
+	button, a
+		&:focus-visible
+			outline: none
