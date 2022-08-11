@@ -1,5 +1,6 @@
 import React from 'react'
 import cs from '../styles/Header.module.sass'
+import Button from './Button'
 
 interface I_Props {}
 
@@ -16,9 +17,11 @@ function Header({}: I_Props) {
           <li className={cs.header__listItem}><a href="#">Careers</a></li>
         </ul>
       </nav>
-      <a href="#" className="invite-button">
+      <Button
+      className={cs.header__inviteButton}
+      action={()=>alert('hey')}>
         Request Invite
-      </a>
+      </Button>
       <button
       title="Navigation close and open"
       className={cs.header__hamburgerButton}></button>

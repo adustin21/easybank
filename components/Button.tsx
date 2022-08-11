@@ -1,13 +1,19 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
 import cs from '../styles/Button.module.sass'
 
-interface I_Props extends PropsWithChildren{}
+interface I_Props extends React.PropsWithChildren{
+	className?: string
+	action: React.MouseEventHandler,
 
-function Button({children}: I_Props) {
+}
+
+function Button({children, action, className}: I_Props) {
 	return (
-		<a href="#" className={cs.button}>
+		<button
+		onClick={action}
+		className={`${cs.button} ${className}`}>
 			{children}
-		</a>
+		</button>
 	)
 }
 
