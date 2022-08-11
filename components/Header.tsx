@@ -1,7 +1,9 @@
-import React, { PropsWithChildren } from 'react'
+import React from 'react'
 import cs from '../styles/Header.module.sass'
 
-function Header() {
+interface I_Props {}
+
+function Header({}: I_Props) {
 	return (
 	<header className={`${cs.header} ${cs.header_close}`}>
     <div className={cs.header__logo}></div>
