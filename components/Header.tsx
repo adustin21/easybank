@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cs from '../styles/Header.module.sass'
 import Button from './Button'
 
 interface I_Props {}
 
 function Header({}: I_Props) {
+  const [close, setClose] = useState(true)
 	return (
-	<header className={`${cs.header} ${cs.header_close}`}>
+	<header className={`${cs.header} ${close && cs.header_close}`}>
     <div className={cs.header__logo}></div>
       <nav className={cs.header__menu }>
         <ul className={cs.header__list}>
@@ -23,6 +24,7 @@ function Header({}: I_Props) {
         Request Invite
       </Button>
       <button
+      onClick={e=>setClose(!close)}
       title="Navigation close and open"
       className={cs.header__hamburgerButton}></button>
   </header>
