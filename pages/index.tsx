@@ -23,7 +23,7 @@ const Home: NextPage<I_Props> = ({posts, benefits}) => {
         content="Take your financial life online. Your Easybank
         account will be a one-stop-shop for spending, saving,
         budgeting, investing, and much more." />
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/images/favicon.png" />
 
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://easybank-by-adustin21.netlify.app"/>
