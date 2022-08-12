@@ -1,0 +1,13 @@
+@use '_mixins' as m
+.card
+	display: grid
+	justify-items: center
+	text-align: center
+	.card__icon
+		@include m.wh(4.8em, 4.8em)
+		background-size: cover
+	.card__header
+		margin: 1.6em 0 1.1em
+	.card__text
+		margin: 0
+

@@ -1,0 +1,29 @@
+@use '_mixins' as m
+@use '_colors' as c
+$cardGrad: linear-gradient(90deg, transparent, c.$white 45%)
+.card
+	overflow: hidden
+	border-radius: 5px
+	background: c.$white
+	.card__textBlock
+		padding: 1.6em 2em
+		.card__author
+			margin: 0
+			font-weight: normal
+		.card__header
+			margin: .5em 0
+		.card__text
+			margin: 0
+			font-size: 13px
+			text-overflow: ellipsis
+			line-height: 18px
+			letter-spacing: -0.2px
+			position: relative
+			&::after
+				@include m.wh(50%, 1.4em)
+				display: block
+				content: ""
+				position: absolute
+				right: 0
+				bottom: 0
+				background: $cardGrad

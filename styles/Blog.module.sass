@@ -1,0 +1,30 @@
+@use '_mixins' as m
+.blog
+	@include m.wrapper(5.9em)
+	.blog__header
+		text-align: center
+		margin: 0 0 .95em
+	.blog__card
+		margin-bottom: 1.6em
+		&:last-child
+			margin-bottom: 0
+	@media screen and ( min-width: 500px )
+		.blog__cards
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+		.blog__card
+			width: 97%
+			&:nth-child(2n)
+				justify-self: end
+			&:last-child
+				margin-bottom: 1.6em
+	@media screen and ( min-width: 1000px )
+		@include m.wrapper(4.4em)
+		padding-bottom: 2.8em
+		.blog__header
+			text-align: left
+		.blog__cards
+			display: flex
+			justify-content: space-between
+		.blog__card
+			width: 23%

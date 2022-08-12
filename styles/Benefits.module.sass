@@ -1,0 +1,51 @@
+@use '_mixins' as m
+@use '_colors' as c
+.benefits
+	@include m.wrapper(4.2em)
+	@include m.fxJA(center, center)
+	flex-wrap: wrap
+	text-align: center
+	background: c.$lightGrayishBlue
+	.benefits__header
+		margin: 0
+	.benefits__text
+		margin: 0.9em 0
+	.benefits__cards
+		display: grid
+		margin-top: 4.2em
+		.benefits__card
+			margin-bottom: 2.1em
+			&:last-child
+				margin: 0
+	@media screen and ( min-width: 756px )
+		@include m.wrapper(5.3em)
+		justify-content: flex-start
+		text-align: left
+	@media screen and ( min-width: 600px )
+		.benefits__cards
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			margin-top: 2em
+			.benefits__card
+				margin: 2em 0 0
+				width: 90%
+				&:last-child
+					margin: 2em 0 0
+				&:nth-child(2n)
+					justify-self: flex-end
+	@media screen and ( min-width: 1000px )
+		.benefits__text
+			width: 60%
+			padding-right: 40%
+			margin-bottom: 0
+		.benefits__cards
+			grid-template-columns: repeat(4, 1fr)
+			grid-template-rows: 1fr
+			.benefits__card
+				justify-self: flex-start
+				text-align: left
+				justify-items: flex-start
+				&:nth-child(2), &:nth-child(3)
+					justify-self: center
+				&:last-child
+					justify-self: flex-end

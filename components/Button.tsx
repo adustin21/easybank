@@ -11,7 +11,7 @@ function Button({children, action, className}: I_Props) {
 	return (
 		<button
 		onClick={action}
-		className={`${cs.button} ${className}`}>
+		className={`${cs.button} ${className || ""}`}>
 			{children}
 		</button>
 	)

@@ -1,0 +1,63 @@
+@use '_mixins' as m
+.poster
+	width: 100%
+	.poster__cover
+		@include m.wh(100%, 15em)
+		position: relative
+		background-image: url("/images/bg-intro-mobile.svg")
+		background-size: cover
+		background-position: 0 -5em
+		overflow: hidden
+	.poster__mockups
+		@include m.wrapper(0)
+		box-sizing: border-box
+		width: 100%
+		position: absolute
+		bottom: -1.1em
+	.poster__article
+		@include m.wrapper(3em)
+		@include m.fxJA(center, center)
+		flex-wrap: wrap
+		text-align: center
+	.poster__header
+		margin: 0
+	.poster__text
+		margin-bottom: 2.7em
+	@media screen and ( min-width: 500px )
+		.poster__mockups
+			top: -50%
+	@media screen and (min-width: 756px)
+		@include m.wrapper(0)
+		padding-right: 0 !important
+		box-sizing: border-box
+		display: grid
+		grid-auto-flow: column
+		grid-template-columns: 1fr 1fr
+		background-image: url(/images/bg-intro-desktop.svg)
+		background-position: 50vw center
+		background-repeat: no-repeat
+		.poster__article
+			grid-column: 1
+			width: 25em
+			padding: 12vw 0
+			justify-content: flex-start
+			text-align: left
+		.poster__text
+			margin: 1.3em 0 2em
+		.poster__cover
+			width: 100%
+			height: 100%
+			overflow: visible
+			background: transparent
+		.poster__mockups
+			height: 150%
+			width: auto
+			top: -27%
+			left: 20%
+	@media screen and (min-width: 1050px)
+		background-position: 40vw center
+		.poster__mockups
+			left: auto
+			right: -22%
+
+
