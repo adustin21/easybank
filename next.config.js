@@ -4,7 +4,9 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['cdn.sanity.io']
-  }
+  },
+  locales: ["en"],
+  defaultLocale: "en"
 }
 
 module.exports = nextConfig

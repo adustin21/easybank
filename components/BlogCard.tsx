@@ -26,9 +26,9 @@ function BlogCard({className, post}: I_Props) {
 			height={imageParams.height}
 			alt={post.title}/>
 			<div className={cs.card__textBlock}>
-				<h6 className={cs.card__author}>
+				<h5 className={cs.card__author}>
 					{post.author}
-				</h6>
+				</h5>
 				<h4 className={cs.card__header}>
 					{post.title}
 				</h4>

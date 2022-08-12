@@ -32,10 +32,12 @@ const Home: NextPage<I_Props> = ({posts, benefits}) => {
         <meta property="og:image" content="/images/slice.png"/>
       </Head>
       <Header />
+      <main>
       <Poster />
       <Benefits benefits={benefits}/>
       <Blog posts={posts}/>
       <Footer />
+      </main>
     </div>
   )
 }
