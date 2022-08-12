@@ -1,0 +1,50 @@
+@use '_colors' as c
+@use '_mixins' as m
+.footer
+	@include m.wrapper(2.6em)
+	display: grid
+	background: c.$darkBlue
+	justify-items: center
+	text-align: center
+	.footer__logo
+		@include m.wh(139px, 20px)
+		background-image: url("/images/logo-footer.svg")
+		background-size: cover
+		margin-bottom: 2em
+	.footer__nav
+		margin-bottom: 2em
+	.footer__listItem
+		margin-bottom: .5em
+		color: c.$white
+		&:hover
+			color: c.$limeGreen
+	.footer__inviteButton
+		margin-bottom: 1.7em
+	@media screen and ( min-width: 756px )
+		grid-template-columns: 1fr 1.5fr 1fr
+		grid-template-rows: auto auto
+		grid-template-areas: "a b c" ". b d"
+		text-align: left
+		justify-items: start
+		.footer__logo
+			grid-area: a
+		.footer__nav
+			grid-area: b
+			margin-bottom: 0em
+			font-size: 15px
+			width: 80%
+		.footer__list
+			display: grid
+			grid-template-columns: 1fr 1fr
+		.footer__inviteButton
+			grid-area: c
+			height: min-content
+			justify-self: end
+		.footer__copyright
+			grid-area: d
+			text-align: right
+			justify-self: end
+			font-size: 15px
+
+
+

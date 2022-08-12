@@ -1,16 +1,22 @@
 import React from 'react'
 import cs from '../styles/Blog.module.sass'
+import { I_Post } from '../types/post'
 import BlogCard from './BlogCard'
 
-interface I_Props{}
+interface I_Props{
+	posts: I_Post[]
+}
 
-function Blog({}: I_Props) {
-	const temp = [0,1,2,3]
+function Blog({posts}: I_Props) {
 	return (
 		<div className={cs.blog}>
 			<h2 className={cs.blog__header}>Latest Articles</h2>
 			<div className={cs.blog__cards}>
-			{temp.map(card=><BlogCard className={cs.blog__card} key={card}/>)}
+			{posts.map(post=><BlogCard
+						post={post}
+						className={cs.blog__card}
+						key={post._id}/>)
+			}
 			</div>
 		</div>
 	)

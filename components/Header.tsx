@@ -20,7 +20,7 @@ function Header({}: I_Props) {
       </nav>
       <Button
       className={cs.header__inviteButton}
-      action={()=>alert('hey')}>
+      action={e=>e}>
         Request Invite
       </Button>
       <button

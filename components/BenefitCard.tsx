@@ -1,22 +1,21 @@
 import React from 'react'
+import { urlFor } from '../sanity/imageBuilder'
 import cs from '../styles/BenefitCard.module.sass'
+import { I_Benefit } from '../types/benefits'
 
 interface I_Props{
-	className?: string
+	className?: string,
+	benefit: I_Benefit
 }
 
-function BenefitCard({className}: I_Props) {
+function BenefitCard({className, benefit}: I_Props) {
 	return (
 		<div className={`${cs.card} ${className || ""}`}>
 			<div
-			style={{backgroundImage: "url(/images/icon-online.svg)"}}
+			style={{backgroundImage: `url(${urlFor(benefit.icon.asset._ref).url()}`}}
 			className={cs.card__icon}/>
-			<h3 className={cs.card__header}>Online Banking</h3>
-			<p className={cs.card__text}>
-			Our modern web and mobile applications
-			allow you to keep track of your finances
-			wherever you are in the world.
-			</p>
+			<h3 className={cs.card__header}>{benefit.title}</h3>
+			<p className={cs.card__text}>{benefit.text}</p>
 		</div>
 	)
 }
