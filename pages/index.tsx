@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useState } from 'react'
 import Benefits from '../components/Benefits'
 import Blog from '../components/Blog'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Poster from '../components/Poster'
+import RequestForm from '../components/RequestForm'
 import { sanityClient } from '../sanity/client'
 import { I_Benefit } from '../types/benefits'
 import { I_Post } from '../types/post';
@@ -15,6 +17,7 @@ interface I_Props {
 }
 
 const Home: NextPage<I_Props> = ({posts, benefits}) => {
+  const [RFisOpen, setRFisOpen] = useState(false)
   return (
     <div>
       <Head>
@@ -31,12 +34,13 @@ const Home: NextPage<I_Props> = ({posts, benefits}) => {
         <meta property="og:description" content="Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more."/>
         <meta property="og:image" content="/images/slice.png"/>
       </Head>
-      <Header />
+      <Header openRequestForm={()=>setRFisOpen(true)}/>
       <main>
-      <Poster />
+      <Poster openRequestForm={()=>setRFisOpen(true)}/>
       <Benefits benefits={benefits}/>
       <Blog posts={posts}/>
-      <Footer />
+      <RequestForm isOpen={RFisOpen} setIsOpen={setRFisOpen}/>
+      <Footer openRequestForm={()=>setRFisOpen(true)}/>
       </main>
     </div>
   )

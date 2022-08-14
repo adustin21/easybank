@@ -2,9 +2,11 @@ import React from 'react'
 import cs from '../styles/Footer.module.sass'
 import Button from './Button'
 
-interface I_Props{}
+interface I_Props {
+  openRequestForm: Function
+}
 
-function Footer({}: I_Props) {
+function Footer({openRequestForm}: I_Props) {
 	return (
 		<footer className={cs.footer}>
 			<div className={cs.footer__logo}/>
@@ -32,7 +34,7 @@ function Footer({}: I_Props) {
 			</nav>
 			<Button
 			className={cs.footer__inviteButton}
-			action={e=>e}>
+			action={()=>openRequestForm()}>
 				Request Invite
 			</Button>
 			<div className={cs.footer__copyright}>
