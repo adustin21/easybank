@@ -10,6 +10,7 @@ interface I_Props{
 function RequestForm({isOpen,setIsOpen}: I_Props) {
 	const submitHandler: React.FormEventHandler<HTMLFormElement> =
 	e => {
+		e.preventDefault()
 		setIsOpen(false)
 	}
 	return (
