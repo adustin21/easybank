@@ -26,7 +26,7 @@ function Header({openRequestForm}: I_Props) {
         Request Invite
       </Button>
       <button
-      onClick={()=>openRequestForm()}
+      onClick={()=>setClose(!close)}
       title="Navigation close and open"
       className={cs.header__hamburgerButton}></button>
   </header>
