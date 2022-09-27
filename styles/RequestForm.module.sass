@@ -9,6 +9,8 @@
 	bottom: 0
 	background: c.$darkBlueOpacity
 	z-index: 200
+	transition-delay: 1s
+	transition-duration: 1s
 	.requestForm__form
 		@include m.fxJA(center, center)
 		@include m.wh(90%, min-content)
@@ -19,6 +21,8 @@
 		padding: 3em 2em 2em
 		box-sizing: border-box
 		border-radius: 8px
+		transition-delay: 1s
+		transition-duration: .2s
 	.requestForm__input
 		width: 100%
 		border: 0
@@ -30,8 +34,13 @@
 		color: c.$darkBlue
 		font-weight: bold
 		border-radius: 4em
+		transition-duration: .5s
+		transition-delay: 1.2s
+		transition-timing-function: easy-out
 		&:focus-within
 			box-shadow: 0 0 0 2px c.$darkBlue
+	.requestForm__input#mail
+		transition-delay: 1.3s
 	.requestForm__button
 		width: 100%
 		margin-bottom: 1em
@@ -39,6 +48,37 @@
 		&:nth-child(4)
 			margin: 0
 			filter: hue-rotate(0deg)
-.requestForm__open
+.requestForm_open
 	display: flex
-
+.requestForm_submitted
+	background: transparent
+	.requestForm__form
+		position: absolute
+		background: transparent
+		input
+			transform: translateX(100vw)
+			opacity: 0
+		button
+			display: none
+	&::after
+		position: absolute
+		display: flex
+		content: ""
+		width: 10em
+		height: 10em
+		justify-content: center
+		align-items: center
+		background: c.$limeGreen
+		border-radius: 100%
+		animation-name: loader
+		animation-duration: .4s
+		animation-iteration-count: 3
+		animation-timing-function: easy-in
+		animation-fill-mode: forwards
+@keyframes loader
+	0%
+		scale: .2
+		opacity: 1
+	100%
+		scale: 1
+		opacity: 0
